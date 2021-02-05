@@ -5,9 +5,9 @@
 
 using namespace std;
 
-class BTree
+class BTree // main class of the tree
 {
-    struct body
+    struct body // body of the tree. Has left and right child
     {
         int data;
         struct body* left, * right;
@@ -22,12 +22,14 @@ public:
     ~BTree();
     void add_node(int data);
     void delete_tree(struct body* _ptr);
-    void print(int option);
+    void print(int option); // choosing print method with argument option
     int find_max_node();
     int find_min_node();
 
 private:
     void create_tree(int data);
+    
+    // tree print methods 
     void print_preorder(struct body* _ptr);
     void print_inorder(struct body* _ptr);
     void print_postorder(struct body* _ptr);
@@ -159,7 +161,7 @@ BTree::~BTree()
     ptr = NULL;
 }
 
-int main()
+int main() // testing tree
 {
     BTree tree;
 
